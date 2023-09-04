@@ -1,7 +1,6 @@
 # refine-laststand FREE VERSION
 A [Standalone/QB Ready] for last stand to allow a chance player can move, get up by chance and ask for offer help.
 
-
 ## Paid Version
 - [refined-laststand [PAID]](https://refined.tebex.io/package/5891340)
 
