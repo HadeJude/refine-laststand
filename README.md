@@ -1,6 +1,6 @@
 # refine-laststand
 A [Standalone/QB Ready] for last stand to allow a chance player can move, get up by chance and ask for offer help.
-
+[Preview](https://streamable.com/uil3q6)
 ## Paid Version
 - [refined-laststand](https://refined.tebex.io/package/5891340)
 - [Preview](https://youtu.be/WrHqh-kDY7M)
@@ -25,7 +25,6 @@ A [Standalone/QB Ready] for last stand to allow a chance player can move, get up
 * Look for `if not isEscorted then`
 * Add `DeadMovement()` before `loadAnimDict(lastStandDict)`
 * Here's the [example](#Example)
-* [Preview](https://streamable.com/uil3q6)
 
 ## Line
 Function
