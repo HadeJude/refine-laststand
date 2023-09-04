@@ -2,7 +2,7 @@
 A [Standalone/QB Ready] for last stand to allow a chance player can move, get up by chance and ask for offer help.
 
 ## Paid Version
-- [refined-laststand [PAID]](https://refined.tebex.io/package/5891340)
+- [refined-laststand](https://refined.tebex.io/package/5891340)
 - [Preview](https://youtu.be/WrHqh-kDY7M)
 
 ## Need Unique Script Experience?
