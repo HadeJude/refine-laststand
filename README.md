@@ -25,6 +25,7 @@ A [Standalone/QB Ready] for last stand to allow a chance player can move, get up
 * Look for `if not isEscorted then`
 * Add `DeadMovement()` before `loadAnimDict(lastStandDict)`
 * Here's the [example](#Example)
+* [Preview](https://streamable.com/uil3q6)
 
 ## Line
 Function
