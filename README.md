@@ -47,6 +47,10 @@ Function
             TaskPlayAnimAdvanced(ped, "move_injured_ground", "front_loop", GetEntityCoords(ped), 1.0, 0.0, GetEntityHeading(ped), 1.0, 1.0, 1.0, 46, 1.0, 0, 0)
         end
     end
+
+    exports('LastStand', function()
+        return InLaststand
+    end)
 ```
 
 ## Example
@@ -78,4 +82,24 @@ Function
             end
         end
     end
+    -- IF you want to add the Export Check 
+    RegisterCommand(Config.HandsUp.command, function()
+        local ped = PlayerPedId()
+        if exports['qb-ambulancejob']:LastStand() then return end <-- this is the example to not trigger you can use it on any other script you want to cancel the animation
+        if not HasAnimDictLoaded('missminuteman_1ig_2') then
+            RequestAnimDict('missminuteman_1ig_2')
+            while not HasAnimDictLoaded('missminuteman_1ig_2') do
+                Wait(10)
+            end
+        end
+        handsUp = not handsUp
+        if exports['qb-policejob']:IsHandcuffed() then return end
+        if handsUp then
+            TaskPlayAnim(ped, 'missminuteman_1ig_2', 'handsup_base', 8.0, 8.0, -1, 50, 0, false, false, false)
+            exports['qb-smallresources']:addDisableControls(Config.HandsUp.controls)
+        else
+            ClearPedTasks(ped)
+            exports['qb-smallresources']:removeDisableControls(Config.HandsUp.controls)
+        end
+    end, false)
 ```
