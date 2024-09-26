@@ -19,6 +19,13 @@ local function movement(ped, num)
     TaskPlayAnimAdvanced(ped, "move_injured_ground", "front_loop", GetEntityCoords(ped), 1.0, 0.0, GetEntityHeading(ped), 1.0, 1.0, 1.0, num, 1.0, 0, 0)
 end
 
+local function doRagdoll(ped)
+    Wait(2000)
+    local heading = GetEntityHeading(ped)
+    local pos = GetEntityCoords(ped)
+    NetworkResurrectLocalPlayer(pos.x, pos.y, pos.z + 0.5, heading, true, false)
+end
+
 CreateThread(function()
     while true do
         local sleep = 1000
@@ -49,6 +56,7 @@ AddEventHandler('gameEventTriggered', function(event, data)
         local victim, attacker, victimDied, weapon = data[1], data[2], data[4], data[7]
         if not IsEntityAPed(victim) then return end
         if victimDied and NetworkGetPlayerIndexFromPed(victim) == PlayerId() and IsEntityDead(victim) then
+            -- doRagdoll(victim) 
             if not lastStandTrigger then
                 lastStandTrigger = true
             end
@@ -66,6 +74,7 @@ end)
 ]]--
 
 -- ESX Choose One Whic Support Your Script
+-- IF YOU DIE YOU ARE IN RAGDOLL STATE PLEASE UNCOMMENT  "-- doRagdoll(victim)"
 --[[
 AddEventHandler('esx:onPlayerDeath', function(data)
     lastStandTrigger = false
